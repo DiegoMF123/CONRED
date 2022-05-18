@@ -461,7 +461,7 @@ class PHPExcel_Shared_OLE
 	* @param integer $date A timestamp
 	* @return string The string for the OLE container
 	*/
-	public static function LocalDate2OLE($date = null)
+	/*public static function LocalDate2OLE($date = null)
 	{
 		if (!isset($date)) {
 			return "\x00\x00\x00\x00\x00\x00\x00\x00";
@@ -496,7 +496,7 @@ class PHPExcel_Shared_OLE
 			$high_part /= 0x100;
 		}
 		return $res;
-	}
+	}*/
 
 	/**
 	* Returns a timestamp from an OLE container's date

@@ -852,8 +852,7 @@ class PHPExcel_Writer_Excel5 extends PHPExcel_Writer_Abstract implements PHPExce
 			$dataProp = $this->_phpExcel->getProperties()->getCreated();
 			$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x0C),
 								   'offset' => array('pack' => 'V'),
-								   'type' 	=> array('pack' => 'V', 'data' => 0x40), // Filetime (64-bit value representing the number of 100-nanosecond intervals since January 1, 1601)
-								   'data'	=> array('data' => PHPExcel_Shared_OLE::LocalDate2OLE($dataProp)));
+								   'type' 	=> array('pack' => 'V', 'data' => 0x40));
 			$dataSection_NumProps++;
 		}
 		//	Modified Date/Time
@@ -861,8 +860,7 @@ class PHPExcel_Writer_Excel5 extends PHPExcel_Writer_Abstract implements PHPExce
 			$dataProp = $this->_phpExcel->getProperties()->getModified();
 			$dataSection[] = array('summary'=> array('pack' => 'V', 'data' => 0x0D),
 								   'offset' => array('pack' => 'V'),
-								   'type' 	=> array('pack' => 'V', 'data' => 0x40), // Filetime (64-bit value representing the number of 100-nanosecond intervals since January 1, 1601)
-								   'data'	=> array('data' => PHPExcel_Shared_OLE::LocalDate2OLE($dataProp)));
+								   'type' 	=> array('pack' => 'V', 'data' => 0x40));
 			$dataSection_NumProps++;
 		}
 		//	Security
@@ -909,7 +907,7 @@ class PHPExcel_Writer_Excel5 extends PHPExcel_Writer_Abstract implements PHPExce
 				$dataSection_Content_Offset += 4 + 4 + strlen($dataProp['data']['data']);
 			}
 			elseif($dataProp['type']['data'] == 0x40){ // Filetime (64-bit value representing the number of 100-nanosecond intervals since January 1, 1601)
-				$dataSection_Content .= $dataProp['data']['data'];
+				/*$dataSection_Content .= $dataProp['data']['data'];*/
 
 				$dataSection_Content_Offset += 4 + 8;
 			}

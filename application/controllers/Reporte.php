@@ -145,7 +145,7 @@ class Reporte extends CI_Controller
 
         //$id = trim($_REQUEST["id"]);
         //Definomos como se va a llamar el nombre del docuemento que vamos a descargar
-        $fileName = 'data-' . time() . '.xlsx';
+        $fileName = 'data-' . '.xlsx';
         // Cargamos la libreria excel
         $this->load->library('excel');
         // Definimos una variable la cual le cargaremos los valores del modelo reportes de la función reportegeneral
